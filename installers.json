@@ -34,7 +34,7 @@
       "ppa" : "none",
       "cmds" : [
         "curl -sSL https://get.rvm.io | bash -s stable",
-        "source /home/"+username+"/.rvm/scripts/rvm"
+        "source /home/username/.rvm/scripts/rvm",
         "rvm requirements",
         "rvm install 2.1.2"
       ],
