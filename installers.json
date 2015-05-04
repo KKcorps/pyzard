@@ -17,40 +17,40 @@
     },
     "google-chrome" : {
       "ppa" : "none",
-      "cmds" : {
+      "cmds" : [
         "sudo apt-get install libxss1 libappindicator1 libindicator7",
         "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb",
         "sudo dpkg -i google-chrome*.deb"
-      }
+      ]
     },
     "node.js" : {
       "ppa" : "none",
-      "cmds" : {
+      "cmds" : [
         "sudo apt-get install npm",
         "sudo ln -s /usr/bin/nodejs /usr/bin/node"
-      }
+      ]
     },
     "ruby" : {
       "ppa" : "none",
-      "cmds" : {
+      "cmds" : [
         "curl -sSL https://get.rvm.io | bash -s stable",
         "source /home/"+username+"/.rvm/scripts/rvm"
         "rvm requirements",
         "rvm install 2.1.2"
-      },
-      "requires" : {
+      ],
+      "requires" : [
         "curl"
-      }
+      ]
     },
     "jekyll" : {
       "ppa" : "none",
-      "cmds" : {
+      "cmds" : [
         "gem install jekyll"
-      },
-      "requires" : {
+      ],
+      "requires" : [
         "nodejs",
         "ruby"
-      }
+      ]
     },
     "linuxdcpp" : {
       "ppa" : "none"
@@ -72,11 +72,11 @@
     },
     "ubuntu-tweaks" : {
       "ppa" : "none",
-      "cmds" : {
+      "cmds" : [
         "wget https://launchpad.net/ubuntu-tweak/0.8.x/0.8.7/+download/ubuntu-tweak_0.8.7-1~trusty2_all.deb",
         "sudo dpkg -i ubuntu-tweak_0.8.7-1~trusty2_all.deb",
         "sudo apt-get install -f"
-      }
+      ]
     },
     "calibre" : {
       "ppa" : "ppa:n-muench/calibre2"
