@@ -6,7 +6,7 @@
           "ppa" : "none"
         },
         "youtube-dl" : {
-          "ppa" : "none"
+          "ppa" : "ppa:nilarimogard/webupd8"
         },
         "git" : {
           "ppa" : "none"
@@ -20,6 +20,8 @@
         "google-chrome" : {
           "ppa" : "none",
           "cmds" : [
+            "mkdir -p Setups",
+            "cd Setups",
             "sudo apt-get install libxss1 libappindicator1 libindicator7",
             "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb",
             "sudo dpkg -i google-chrome*.deb"
@@ -35,8 +37,10 @@
         "ruby" : {
           "ppa" : "none",
           "cmds" : [
+            "mkdir -p Setups",
+            "cd Setups",
             "curl -sSL https://get.rvm.io | bash -s stable",
-            "source /home/username/.rvm/scripts/rvm",
+            "source /home/kharekartik/.rvm/scripts/rvm",
             "rvm requirements",
             "rvm install 2.1.2"
           ],
@@ -75,9 +79,107 @@
         "ubuntu-tweaks" : {
           "ppa" : "none",
           "cmds" : [
+            "mkdir -p Setups",
+            "cd Setups",
             "wget https://launchpad.net/ubuntu-tweak/0.8.x/0.8.7/+download/ubuntu-tweak_0.8.7-1~trusty2_all.deb",
             "sudo dpkg -i ubuntu-tweak_0.8.7-1~trusty2_all.deb",
             "sudo apt-get install -f"
+          ]
+        },
+        "calibre" : {
+          "ppa" : "ppa:n-muench/calibre2"
+        },
+        "gdebi" : {
+          "ppa" : "none"
+        }
+    }
+  },
+
+  "CentOS" : {
+    "package-installer": "yum",
+    "packages":{
+        "axel" : {
+          "ppa" : "none"
+        },
+        "youtube-dl" : {
+          "ppa" : "none"
+        },
+        "git" : {
+          "ppa" : "none"
+        },
+        "vim" : {
+          "ppa" : "none"
+        },
+        "calibre" : {
+          "ppa" : "none",
+          "cmds" : [
+          "mkdir -p Setups",
+          "cd Setups",
+          "curl -L http://code.calibre-ebook.com/dist/src | tar xvJ ",
+          "cd calibre*",
+          "sudo python setup.py install"]
+        },
+        "google-chrome" : {
+          "ppa" : "none",
+          "cmds" : [
+            "mkdir -p Setups",
+            "cd Setups",
+            "sudo yum install libxss1 libappindicator1 libindicator7",
+            "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb",
+            "sudo dpkg -i google-chrome*.deb"
+          ]
+        },
+        "node.js" : {
+          "ppa" : "none",
+          "cmds" : [
+            "sudo yum install npm",
+            "sudo ln -s /usr/bin/nodejs /usr/bin/node"
+          ]
+        },
+        "ruby" : {
+          "ppa" : "none",
+          "cmds" : [
+            "curl -sSL https://get.rvm.io | bash -s stable",
+            "source /home/username/.rvm/scripts/rvm",
+            "rvm requirements",
+            "rvm install 2.1.2"
+          ],
+          "requires" : [
+            "curl"
+          ]
+        },
+        "jekyll" : {
+          "ppa" : "none",
+          "cmds" : [
+            "gem install jekyll"
+          ],
+          "requires" : [
+            "nodejs",
+            "ruby"
+          ]
+        },
+        "linuxdcpp" : {
+          "ppa" : "none"
+        },
+        "sublime-text-installer" : {
+          "ppa" : "ppa:webupd8team/sublime-text-3"
+        },
+        "vlc" : {
+          "ppa" : "none"
+        },
+        "transmission" : {
+          "ppa" : "none"
+        },
+        "oracle-java8-installer" : {
+          "ppa" : "none",
+          "cmds" : [
+          "mkdir -p Setups",
+          "cd Setups"
+          "wget http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-x64.rpm",
+          "rpm -ivh jdk-8u25-linux-x64.rpm"
+          "echo -e '#!/bin/bash\nJAVA_HOME=/usr/java/jdk1.8.0_25/\nPATH=$JAVA_HOME/bin:$PATH\nexport PATH JAVA_HOME\nexport CLASSPATH=\n' >> /etc/profile.d/java.sh",
+          "chmod +x /etc/profile.d/java.sh",
+          "source /etc/profile.d/java.sh"
           ]
         },
         "calibre" : {
